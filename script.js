@@ -1,49 +1,44 @@
 function generateMatrix() {
-    // Get the dimension from user input
+    
     const dimension = document.getElementById('dimension').value;
 
-    // Check if the input is a valid number
+    
     if (dimension < 1) {
         alert("Please enter a valid positive number.");
         return;
     }
 
-    // Clear any existing matrix
+   
     const matrixContainer = document.getElementById('matrixContainer');
     matrixContainer.innerHTML = '';
 
-    // Create a table element for the matrix
     const table = document.createElement('table');
 
-    // Loop to create the rows and cells for the matrix
     for (let i = 0; i < dimension; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < dimension; j++) {
             const cell = document.createElement('td');
-            cell.id = `cell-${i}-${j}`; // Unique ID for each cell
-            cell.textContent = `(${i + 1},${j + 1})`; // Cell coordinates or placeholder text
+            cell.id = `cell-${i}-${j}`; 
+            cell.textContent = `(${i + 1},${j + 1})`; 
             row.appendChild(cell);
         }
         table.appendChild(row);
     }
 
-    // Append the table to the container
     matrixContainer.appendChild(table);
 }
 
 function generateMatrixInputs() {
     const dimension = document.getElementById('dimension').value;
 
-    // Check if the input is a valid number
     if (dimension < 1) {
         alert("Please enter a valid positive number.");
         return;
     }
 
     const matrixInputContainer = document.getElementById('matrixInputContainer');
-    matrixInputContainer.innerHTML = ''; // Clear previous inputs
+    matrixInputContainer.innerHTML = ''; 
 
-    // Create input fields for each matrix cell
     for (let i = 0; i < dimension; i++) {
         const rowDiv = document.createElement('div');
         rowDiv.className = "matrix-row";
@@ -53,13 +48,12 @@ function generateMatrixInputs() {
             input.type = "number";
             input.className = "matrix-input";
             input.placeholder= 'Inter your number'
-            input.id = `cell-${i}-${j}`; // Unique ID for each cell
+            input.id = `cell-${i}-${j}`;
             rowDiv.appendChild(input);
         }
         matrixInputContainer.appendChild(rowDiv);
     }
 
-    // Show the button to display the matrix
     document.getElementById('showMatrixBtn').style.display = 'inline';
 }
 
@@ -67,7 +61,7 @@ function displayMatrix() {
     document.getElementById('line').style.display = 'inline';
     const dimension = document.getElementById('dimension').value;
     const matrixContainer = document.getElementById('matrixContainer');
-    matrixContainer.innerHTML = ''; // Clear any existing matrix
+    matrixContainer.innerHTML = '';
 
     const table = document.createElement('table');
 
@@ -76,7 +70,7 @@ function displayMatrix() {
 
         for (let j = 0; j < dimension; j++) {
             const cell = document.createElement('td');
-            const cellValue = document.getElementById(`cell-${i}-${j}`).value || 0; // Default to 0 if empty
+            const cellValue = document.getElementById(`cell-${i}-${j}`).value || 0; 
             cell.textContent = cellValue;
             row.appendChild(cell);
         }
@@ -84,7 +78,7 @@ function displayMatrix() {
     }
 
     matrixContainer.appendChild(table);
-    // matrixInputContainer.innerHTML='';
+   
     
     document.getElementById('showMatrixBtn').style.display='none';
     document.getElementById('Decompose').style.display= 'inline';
@@ -95,7 +89,7 @@ function calculateLU() {
     document.getElementById('Decompose').style.display= 'none';
     const dimension = parseInt(document.getElementById('dimension').value);
 
-    // Initialize the matrix A
+    
     let A = [];
     for (let i = 0; i < dimension; i++) {
         A[i] = [];
@@ -105,39 +99,31 @@ function calculateLU() {
     }
     matrixInputContainer.innerHTML='';
 
-    // Initialize L as an identity matrix and U as a copy of A
+   
     let L = Array.from({ length: dimension }, (_, i) => Array(dimension).fill(0));
     let U = JSON.parse(JSON.stringify(A));
 
     for (let i = 0; i < dimension; i++) {
-        L[i][i] = 1;  // Set diagonal of L to 1
+        L[i][i] = 1;  
     }
 
-    // Perform LU Decomposition using Elimination Matrix method
     const resultContainer = document.getElementById('resultContainer');
-    resultContainer.innerHTML = ''; // Clear previous results
+    resultContainer.innerHTML = ''; 
 
     for (let j = 0; j < dimension - 1; j++) {
         for (let i = j + 1; i < dimension; i++) {
             const multiplier = U[i][j] / U[j][j];
             L[i][j] = multiplier;
-
-            // Display how L is updated
-           
-
-            // Create and display the current Elimination Matrix E_ij
+            
             let E = Array.from({ length: dimension }, (_, k) => Array(dimension).fill(0));
             for (let k = 0; k < dimension; k++) {
                 E[k][k] = 1;
             }
-            E[i][j] = -multiplier;  // Set the elimination factor in E
+            E[i][j] = -multiplier; 
 
-            // Update U for this row
             for (let k = j; k < dimension; k++) {
                 U[i][k] -= multiplier * U[j][k];
             }
-
-            // Display E_ij
             displayEliminationMatrix(E, `E_${i + 1}${j + 1}`);
             displayLUpdate(L, i, j, multiplier);
         }
@@ -196,7 +182,7 @@ function createMatrixTable(matrix) {
         const row = document.createElement('tr');
         for (let j = 0; j < matrix[i].length; j++) {
             const cell = document.createElement('td');
-            cell.textContent = matrix[i][j].toFixed(2);  // Display with 2 decimal places
+            cell.textContent = matrix[i][j].toFixed(2); 
             row.appendChild(cell);
         }
         table.appendChild(row);
