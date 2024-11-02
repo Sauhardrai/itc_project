@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LU Factoristion Calculator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1> LU Decompostion of Matrix </h1>
+
+    </header>
+    <main>
+        <div id="maine_div">
+            <label class="go" for="dimension">Enter matrix dimension:</label>
+            <input  type="number" id="dimension" min="1" required><br>
+            <button class="go" onclick="generateMatrix()">Generate Matrix</button>
+            <button class="go" onclick="generateMatrixInputs()">Generate Own Matrix</button>
+            
+            
+            <div id="matrixInputContainer"></div>
+            <button onclick="displayMatrix(); clear();" style="display:none;" id="showMatrixBtn">Show Matrix</button>
+            
+
+        </div>
+        <div id="Lu_div">
+            <button id="Decompose", onclick="calculateLU()" style="display: none;">Decompose</button>
+            <br><p style="display: none;" id="line">Your given matrix is:-</p>
+            <div id="matrixContainer"></div>
+            <div id="resultContainer" class="matrix-container"></div>
+        </div>
+        
+        
+        
+
+    
+
+    </main>
+
+</body>
+
+</html>
