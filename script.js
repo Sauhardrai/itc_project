@@ -20,7 +20,7 @@ function generateMatrix() {
         const row = document.createElement('tr');
         for (let j = 0; j < dimension; j++) {
             const cell = document.createElement('td');
-            tr.id = `cell-${i}-${j}`; // Unique ID for each cell
+            cell.id = `cell-${i}-${j}`; // Unique ID for each cell
             cell.textContent = `(${i + 1},${j + 1})`; // Cell coordinates or placeholder text
             row.appendChild(cell);
         }
