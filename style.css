@@ -7,11 +7,13 @@
 }
 
 body {
-    background-color: #a4e0fc;
+    /* background-color: #a4fcfc; */
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background-image:url('https://img.lovepik.com/background/20211020/large/lovepik-simple-block-science-and-technology-line-background-image_400063629.jpg');
+    size-adjust: cover;
 }
 
 /* Header styling */
@@ -30,7 +32,7 @@ header h1 {
 main {
     width: 90%;
     max-width: 600px;
-    background-color: #5b8ce1;
+    background-color: #3c6e91;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
@@ -62,14 +64,14 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-    border-color: #007acc;
+    border-color: #9bb4c5;
 }
 
 button {
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #007acc;
+    background-color: #69899f;
     border: none;
     border-radius: 5px;
     cursor: pointer;
