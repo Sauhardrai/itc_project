@@ -131,17 +131,6 @@ button:disabled {
     text-align: center;
 }
 
-/* Responsive styling */
-@media (max-width: 600px) {
-    main {
-        padding: 15px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    input[type="number"] {
-        width: 90%;
-    }
+#gao{
+    color: blue;
 }

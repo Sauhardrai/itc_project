@@ -73,7 +73,7 @@ function calculateLU() {
         L[i][i] = 1;
     }
 
-    const resultContainer = document.getElementById('resultContainer');
+    const resultContainer = document.getElementById('result');
     resultContainer.innerHTML = '';
 
     for (let j = 0; j < dimension - 1; j++) {
@@ -96,8 +96,8 @@ function calculateLU() {
                 U[i][k] -= multiplier * U[j][k];
             }
 
-            displayEliminationMatrix(E, `E${i + 1}${j + 1}`, `(a${i + 1}${j + 1} = a${i + 1}${j + 1} - ${multiplier.toFixed(2)} * a${j + 1}${j + 1})`);
-            displayUMatrixStep(U, `A Matrix after eliminating row ${i + 1}, column ${j + 1}`);
+            displayEliminationMatrix(E, `E${i + 1}${j + 1}`);
+            displayUMatrixStep(U, `A Matrix after eliminating row ${i + 1}, column ${j + 1}`,`(R${i + 1} = R${i + 1} - (a${i+1}${j+1}/a${j+1}${j+1})* R${j + 1})`);
         }
     }
 
@@ -118,29 +118,29 @@ function calculateLU() {
 }
 
 function displayEliminationMatrix(E, label, description) {
-    const resultContainer = document.getElementById('resultContainer');
+    const resultContainer = document.getElementById('result');
 
     const table = document.createElement('table');
     let title = document.createElement('h3');
-    title.innerText = `${label} (Elimination Matrix) ${description}`;
+    title.innerText = `${label} (Elimination Matrix) `;
     table.appendChild(createMatrixTable(E));
     resultContainer.appendChild(title);
     resultContainer.appendChild(table);
 }
 
-function displayUMatrixStep(U, description) {
-    const resultContainer = document.getElementById('resultContainer');
+function displayUMatrixStep(U,label, description) {
+    const resultContainer = document.getElementById('result');
 
     const uTable = document.createElement('table');
     let uTitle = document.createElement('h3');
-    uTitle.innerText = description;
+    uTitle.innerText = `${label} ${description}`;
     uTable.appendChild(createMatrixTable(U));
     resultContainer.appendChild(uTitle);
     resultContainer.appendChild(uTable);
 }
 
 function displayResult(L, D, U) {
-    const resultContainer = document.getElementById('resultContainer');
+    const resultContainer = document.getElementById('result');
 
     // Display L Matrix
     const lTable = document.createElement('table');
@@ -172,10 +172,10 @@ function displayResult(L, D, U) {
 }
 
 function displayFinalLDU(L, D, U) {
-    const resultContainer = document.getElementById('resultContainer');
+    const resultContainer = document.getElementById('result');
 
     const title = document.createElement('h3');
-    title.innerText = 'Final A = L * D * U Matrix';
+    title.innerText = 'Final A = LDU Matrix';
     resultContainer.appendChild(title);
 
     // We multiply L, D, and U matrices to get A
