@@ -97,7 +97,7 @@ function calculateLU() {
             }
 
             displayEliminationMatrix(E, `E${i + 1}${j + 1}`, `(a${i + 1}${j + 1} = a${i + 1}${j + 1} - ${multiplier.toFixed(2)} * a${j + 1}${j + 1})`);
-            displayUMatrixStep(U, `U Matrix after eliminating row ${i + 1}, column ${j + 1}`);
+            displayUMatrixStep(U, `A Matrix after eliminating row ${i + 1}, column ${j + 1}`);
         }
     }
 
