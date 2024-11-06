@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image:url('https://img.lovepik.com/background/20211020/large/lovepik-simple-block-science-and-technology-line-background-image_400063629.jpg');
+    background-image:url('https://cdn.pixabay.com/photo/2017/10/18/10/21/blue-2863550_1280.png');
     size-adjust: cover;
 }
 
@@ -20,6 +20,9 @@ header {
 }
 
 header h1 {
+    position: relative;
+    bottom: 236px;
+    left: 300px;
     color: #444;
     font-size: 2rem;
     font-weight: 700;
@@ -27,9 +30,11 @@ header h1 {
 
 
 main {
+    position: relative;
+    right: 200px;
     width: 90%;
     max-width: 600px;
-    background-color: #3c6e91;
+    background-color: #92acbe;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
