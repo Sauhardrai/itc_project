@@ -1,4 +1,4 @@
-/* Reset some default styling */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    /* background-color: #a4fcfc; */
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@ input[type="number"] {
 .matrix-container {
     margin-top: 20px;
 }
-/* Header styling */
+
 header {
     text-align: center;
     margin-bottom: 20px;
