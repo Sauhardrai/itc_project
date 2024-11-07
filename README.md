@@ -1,2 +1,2 @@
 # itc_project
-THis is my first commit 
+This is our ITC Project 
