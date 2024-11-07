@@ -10,35 +10,43 @@
 </head>
 
 <body>
+    <!-- Header Section -->
     <header id="head">
         <h1> LDU Decompostion of Matrix Calculator </h1>
+        <!-- Brief instructions for the user -->
+        <p>Enter a square matrix's dimension and input your matrix to calculate its LDU decomposition.</p>
     </header>
+    
     <main>
+        <!-- Main content section for matrix input -->
         <div id="main_div">
+            <!-- Label and input field for matrix dimension -->
             <label  for="dimension">Enter matrix dimension:</label>
             <input  type="number" id="dimension" min="1" required><br>
+            <!-- Button to generate matrix input fields -->
             <button class="button" onclick="generateMatrixInputs()">Generate Own Matrix</button>
             
-            
+            <!-- Container where matrix inputs will be dynamically generated -->
             <div id="matrixInputContainer"></div>
-            <button onclick="displayMatrix();" class="button" style="display:none;" id="showMatrixBtn">Show Matrix</button>
-            
 
+            <!-- Button to show the matrix (hidden initially) -->
+            <button onclick="displayMatrix();" class="button" style="display:none;" id="showMatrixBtn">Show Matrix</button>
         </div>
+
+        <!-- Section for displaying matrix and results -->
         <div id="main_div">
+            <!-- Button to start decomposition process (hidden initially) -->
             <button class="button" id="Decompose", onclick="calculateLU()" style="display: none;">Decompose</button>
-            <br><p style="display: none;" id="line">Your given matrix is:-</p>
+            <br>
+            <!-- Section displaying the matrix -->
+            <p style="display: none;" id="line">Your given matrix is:-</p>
+
+            <!-- Container where the matrix will be displayed -->
             <div id="matrixContainer"></div>
+            <!-- Container for the decomposition results -->
             <div id="result" class="matrix-container"></div>
         </div>
-        
-        
-        
-
-    
-
     </main>
-
 </body>
 
 </html>
