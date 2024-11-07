@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #040d1a;
+    color: #fff;
+}
+
+.team-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.team-description {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: aqua;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    transition: transform 0.3s;
+}
+.team-member p {
+   color: red;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+
+.rounded-button {
+    display: inline-block;      /* Allows padding and margin */
+    padding: 10px 20px;       /* Padding inside the button */
+    background-color: #4CAF50; /* Green background */
+    color: white;              /* Text color */
+    text-align: center;        /* Center the text */
+    text-decoration: none;      /* Remove underline from the link */
+    border-radius: 25px;      /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.rounded-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+ 
+#ajun{
+    border-radius: 20px;
+}
+#h1{
+    color: rgb(228,228,126);
+}

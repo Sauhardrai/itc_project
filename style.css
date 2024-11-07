@@ -23,7 +23,7 @@ header h1 {
     position: relative;
     bottom: 236px;
     left: 300px;
-    color: #444;
+    color: #ee1313;
     font-size: 2rem;
     font-weight: 700;
 }
@@ -34,7 +34,7 @@ main {
     right: 200px;
     width: 90%;
     max-width: 600px;
-    background-color: #92acbe;
+    background-color: #7fb4f9;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
