@@ -7,13 +7,8 @@
 }
 
 body {
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #040d1a;
     min-height: 100vh;
-    background-image:url('https://img.lovepik.com/background/20211020/large/lovepik-simple-block-science-and-technology-line-background-image_400063629.jpg');
-    size-adjust: cover;
 }
 
 table, td {
@@ -24,43 +19,6 @@ table, td {
 }
 input[type="number"] {
     width: 60px;
-}
-.matrix-container {
-    margin-top: 20px;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    color: #444;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-/* Main container styling */
-main {
-    width: 90%;
-    max-width: 600px;
-    background-color: #3c6e91;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-}
-
-/* Input and button styling */
-#main_div {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#main_div label {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 10px;
-    display: block;
 }
 
 input[type="number"] {
@@ -79,11 +37,62 @@ input[type="number"]:focus {
     border-color: #9bb4c5;
 }
 
-button {
+#head{
+    margin: 40px;
+
+}
+#head h1{
+    text-align: center;
+    color: rgb(228, 228, 126);
+    position: relative;
+    font-size: 60px;
+    
+    
+}
+
+/* .matrix-container {
+    margin-top: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #444;
+    font-size: 2rem;
+    font-weight: 700;
+} */
+
+/* Main container styling */
+ main {
+    margin: auto;
+
+    padding: 20px;
+    
+}
+
+/* Input and button styling */
+#main_div {
+    /* background-color: red; */
+    margin: auto;
+    text-align: center;
+}
+
+#main_div label {
+    font-size: 25px;
+    color: #00fff7;
+    margin-bottom: 10px;
+}
+
+
+
+.button {
     padding: 10px 20px;
     font-size: 1rem;
-    color: #fff;
-    background-color: #69899f;
+    color: #5ca8ef;
+    background-color: grey;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -105,18 +114,18 @@ button:disabled {
 }
 
 /* Matrix and result container styling */
-#matrixInputContainer, #matrixContainer, #resultContainer {
+/* #matrixInputContainer, #matrixContainer, #result {
     margin-top: 20px;
     padding: 10px;
-}
+} */
 
-.matrix-container {
+/* .matrix-container {
     margin-top: 20px;
     background-color: #fafafa;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
+} */
 
 /* Result text styling */
 #line {
@@ -127,10 +136,3 @@ button:disabled {
     margin-top: 20px;
 }
 
-#Lu_div {
-    text-align: center;
-}
-
-#gao{
-    color: blue;
-}

@@ -73,8 +73,8 @@ function calculateLU() {
         L[i][i] = 1;
     }
 
-    const resultContainer = document.getElementById('result');
-    resultContainer.innerHTML = '';
+    const result = document.getElementById('result');
+    result.innerHTML = '';
 
     for (let j = 0; j < dimension - 1; j++) {
         for (let i = j + 1; i < dimension; i++) {
@@ -118,29 +118,29 @@ function calculateLU() {
 }
 
 function displayEliminationMatrix(E, label, description) {
-    const resultContainer = document.getElementById('result');
+    const result = document.getElementById('result');
 
     const table = document.createElement('table');
     let title = document.createElement('h3');
     title.innerText = `${label} (Elimination Matrix) `;
     table.appendChild(createMatrixTable(E));
-    resultContainer.appendChild(title);
-    resultContainer.appendChild(table);
+    result.appendChild(title);
+    result.appendChild(table);
 }
 
 function displayUMatrixStep(U,label, description) {
-    const resultContainer = document.getElementById('result');
+    const result = document.getElementById('result');
 
     const uTable = document.createElement('table');
     let uTitle = document.createElement('h3');
     uTitle.innerText = `${label} ${description}`;
     uTable.appendChild(createMatrixTable(U));
-    resultContainer.appendChild(uTitle);
-    resultContainer.appendChild(uTable);
+    result.appendChild(uTitle);
+    result.appendChild(uTable);
 }
 
 function displayResult(L, D, U) {
-    const resultContainer = document.getElementById('result');
+    const result = document.getElementById('result');
 
     // Display L Matrix
     const lTable = document.createElement('table');
@@ -151,37 +151,37 @@ function displayResult(L, D, U) {
     lTitle.innerText = `Final L matrix as `;
     lTitle.appendChild(span);
     lTable.appendChild(createMatrixTable(L));
-    resultContainer.appendChild(lTitle);
-    resultContainer.appendChild(lTable);
+    result.appendChild(lTitle);
+    result.appendChild(lTable);
 
     // Display D Matrix
     const dTable = document.createElement('table');
     let dTitle = document.createElement('h3');
     dTitle.innerText = 'Final D Matrix (Diagonal Matrix)';
     dTable.appendChild(createMatrixTable(D));
-    resultContainer.appendChild(dTitle);
-    resultContainer.appendChild(dTable);
+    result.appendChild(dTitle);
+    result.appendChild(dTable);
 
     // Display U Matrix
     const uTable = document.createElement('table');
     let uTitle = document.createElement('h3');
     uTitle.innerText = 'Final U Matrix (Normalized)';
     uTable.appendChild(createMatrixTable(U));
-    resultContainer.appendChild(uTitle);
-    resultContainer.appendChild(uTable);
+    result.appendChild(uTitle);
+    result.appendChild(uTable);
 }
 
 function displayFinalLDU(L, D, U) {
-    const resultContainer = document.getElementById('result');
+    const result = document.getElementById('result');
 
     const title = document.createElement('h3');
     title.innerText = 'Final A = LDU Matrix';
-    resultContainer.appendChild(title);
+    result.appendChild(title);
 
     // We multiply L, D, and U matrices to get A
     const A = multiplyMatrices(L, multiplyMatrices(D, U));
     const aTable = createMatrixTable(A);
-    resultContainer.appendChild(aTable);
+    result.appendChild(aTable);
 }
 
 function multiplyMatrices(A, B) {

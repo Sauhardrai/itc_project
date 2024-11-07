@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LDU Factoristion Calculator</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-    </head>
-    
-    <body>
-        <header>
-            <h1> LDU Decompostion of Matrix </h1>
-        </header>
-        
-        <main>
-            <div id="maine_div">
-                <label class="go" for="dimension">Enter matrix dimension:</label>
-                <input  type="number" id="dimension" min="1" required><br>
-                <button class="go" onclick="generateMatrixInputs()">Generate Own Matrix</button>
-                
-                <!-- Container for the matrix input fields -->
-                <div id="matrixInputContainer"></div>
-    
-                <!-- Button to display the matrix after it has been generated -->
-                <button onclick="displayMatrix();" style="display:none;" id="showMatrixBtn">Show Matrix</button>            
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDU Factoristion Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header id="head">
+        <h1> LDU Decompostion of Matrix Calculator </h1>
+    </header>
+    <main>
+        <div id="main_div">
+            <label  for="dimension">Enter matrix dimension:</label>
+            <input  type="number" id="dimension" min="1" required><br>
+            <button class="button" onclick="generateMatrixInputs()">Generate Own Matrix</button>
             
-            <div id="Lu_div">
-                <!-- Decompose button and matrix display -->
-                <button id="Decompose", onclick="calculateLU()" style="display: none;">Decompose</button>
-                <br>
-                <!-- Message that shows before displaying matrix -->
-                <p style="display: none;" id="line">Your given matrix is:-</p>
+            
+            <div id="matrixInputContainer"></div>
+            <button onclick="displayMatrix();" class="button" style="display:none;" id="showMatrixBtn">Show Matrix</button>
+            
+
+        </div>
+        <div id="main_div">
+            <button class="button" id="Decompose", onclick="calculateLU()" style="display: none;">Decompose</button>
+            <br><p style="display: none;" id="line">Your given matrix is:-</p>
+            <div id="matrixContainer"></div>
+            <div id="result" class="matrix-container"></div>
+        </div>
+        
+        
+        
+
     
-                <!-- Placeholder for showing the matrix -->
-                <div id="matrixContainer"></div>
-    
-                <!-- Placeholder for the LU decomposition result -->
-                <div id="resultContainer" class="matrix-container"></div>
-            </div>
-        </main>
-    </body>
+
+    </main>
+
+</body>
 
 </html>
