@@ -6,8 +6,8 @@ function generateMatrixInputs() {
         return;
     }
 
-    const matrixInputContainer = document.getElementById('matrixInputContainer');
-    matrixInputContainer.innerHTML = '';
+    const matrix = document.getElementById('matrixInputContainer');
+    matrix.innerHTML = '';
 
     for (let i = 0; i < dimension; i++) {
         const rowDiv = document.createElement('div');
@@ -21,7 +21,7 @@ function generateMatrixInputs() {
             input.id = `cell-${i}-${j}`;
             rowDiv.appendChild(input);
         }
-        matrixInputContainer.appendChild(rowDiv);
+        matrix.appendChild(rowDiv);
     }
 
     document.getElementById('showMatrixBtn').style.display = 'inline';
@@ -97,7 +97,7 @@ function calculateLU() {
             }
 
             displayEliminationMatrix(E, `E${i + 1}${j + 1}`);
-            displayUMatrixStep(U, `A Matrix after eliminating row ${i + 1}, column ${j + 1}`,`(R${i + 1} = R${i + 1} - (a${i+1}${j+1}/a${j+1}${j+1})* R${j + 1})`);
+            displayUMatrixStep(U, `A Matrix after row opration:-`,`(R${i + 1} = R${i + 1} - (a${i+1}${j+1}/a${j+1}${j+1})* R${j + 1})`);
         }
     }
 

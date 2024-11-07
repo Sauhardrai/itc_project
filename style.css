@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +6,28 @@
 }
 
 body {
+    display: grid;
+    grid-template-rows: 1fr auto;
     background-color: #040d1a;
     min-height: 100vh;
+
+
 }
 
-table, td {
-    border: 1px solid black;
+table {
+    margin: auto;
+    padding: 20px;
+}
+
+table,
+td {
+    color: aqua;
+    border: 1px solid white;
     border-collapse: collapse;
     padding: 5px;
     text-align: center;
 }
+
 input[type="number"] {
     width: 60px;
 }
@@ -37,45 +48,28 @@ input[type="number"]:focus {
     border-color: #9bb4c5;
 }
 
-#head{
+#head {
     margin: 40px;
 
 }
-#head h1{
+
+#head h1 {
     text-align: center;
     color: rgb(228, 228, 126);
     position: relative;
     font-size: 60px;
-    
-    
+
+
 }
 
-/* .matrix-container {
-    margin-top: 20px;
-}
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    color: #444;
-    font-size: 2rem;
-    font-weight: 700;
-} */
-
-/* Main container styling */
- main {
+main {
     margin: auto;
-
     padding: 20px;
-    
+
 }
 
-/* Input and button styling */
 #main_div {
-    /* background-color: red; */
     margin: auto;
     text-align: center;
 }
@@ -91,8 +85,8 @@ header h1 {
 .button {
     padding: 10px 20px;
     font-size: 1rem;
-    color: #5ca8ef;
-    background-color: grey;
+    color: #00fc9b;
+    background-color: rgb(2, 35, 106);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -101,11 +95,13 @@ header h1 {
 }
 
 button:hover {
-    background-color: #6fbbc0;
+    color: white;
+    background-color: #fc0101;
 }
 
 button:disabled {
     background-color: #bbb;
+
     cursor: not-allowed;
 }
 
@@ -113,26 +109,40 @@ button:disabled {
     margin-top: 10px;
 }
 
-/* Matrix and result container styling */
-/* #matrixInputContainer, #matrixContainer, #result {
-    margin-top: 20px;
-    padding: 10px;
-} */
 
-/* .matrix-container {
+#matrixInputContainer,
+#matrixContainer,
+#result {
     margin-top: 20px;
-    background-color: #fafafa;
     padding: 10px;
-    border: 1px solid #ddd;
+}
+
+.matrix-container {
+    margin-top: 20px;
+    background-color: #040d1a;
+    padding: 20px;
+    color: rgb(5, 238, 255);
+
     border-radius: 5px;
-} */
+}
 
-/* Result text styling */
+
+.matrix-container h3 {
+    padding: 30px;
+}
+
 #line {
+    padding: 20px;
+    display: none;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
+    color: aqua;
     text-align: center;
     margin-top: 20px;
 }
 
+.footer {
+    color: aqua;
+    text-align: center;
+    padding: 10px;
+}
