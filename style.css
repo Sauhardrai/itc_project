@@ -80,8 +80,6 @@ main {
     margin-bottom: 10px;
 }
 
-
-
 .button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -104,11 +102,6 @@ button:disabled {
 
     cursor: not-allowed;
 }
-
-.go {
-    margin-top: 10px;
-}
-
 
 #matrixInputContainer,
 #matrixContainer,

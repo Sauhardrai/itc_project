@@ -101,7 +101,6 @@ function calculateLU() {
         }
     }
 
-    // Extract D from the diagonal of U and normalize U to have ones on the diagonal
     for (let i = 0; i < dimension; i++) {
         D[i][i] = U[i][i];
         for (let j = 0; j < dimension; j++) {
@@ -178,7 +177,6 @@ function displayFinalLDU(L, D, U) {
     title.innerText = 'Final A = LDU Matrix';
     result.appendChild(title);
 
-    // We multiply L, D, and U matrices to get A
     const A = multiplyMatrices(L, multiplyMatrices(D, U));
     const aTable = createMatrixTable(A);
     result.appendChild(aTable);
