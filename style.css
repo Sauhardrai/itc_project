@@ -135,7 +135,17 @@ button:disabled {
 }
 
 .footer {
+    display: flex;
     color: aqua;
     text-align: center;
     padding: 10px;
+}
+#our{   
+    position: relative;
+    left: 950px;
+}
+
+#doc{
+    position: relative;
+    left: 450px;
 }

@@ -94,11 +94,22 @@ function calculateLU() {
 
     for (let j = 0; j < dimension - 1; j++) {
         for (let i = j + 1; i < dimension; i++) {
+            document.getElementById('result').innerHTML += `<hr style= margin:20px;> `;
             if (U[j][j] === 0) {
-                alert("Division by zero encountered. Please provide a matrix that allows factorization.");
-                return;
+                let swapFound = false;
+                for (let k = j + 1; k < dimension; k++) {
+                    if (U[k][j] !== 0) {
+                        [U[j], U[k]] = [U[k], U[j]];
+                        alert(`Swapped row ${j + 1} with row ${k + 1} to avoid division by zero.`);
+                        swapFound = true;
+                        break;
+                    }
+                }
+                if (!swapFound) {
+                    alert("Division by zero encountered, and no suitable row found for swapping. Please provide a matrix that allows factorization.");
+                    return;
+                }
             }
-
             const multiplier = U[i][j] / U[j][j];
             L[i][j] = multiplier;
 
@@ -114,11 +125,11 @@ function calculateLU() {
             for (let k = j; k < dimension; k++) {
                 U[i][k] -= multiplier * U[j][k];
             }
-
             displayEliminationMatrix(E, `E${i + 1}${j + 1}`);
             displayUMatrixStep(U, `A Matrix after row operation:-`, `(R${i + 1} = R${i + 1} - (a${i + 1}${j + 1}/a${j + 1}${j + 1}) * R${j + 1})`);
         }
     }
+    displayUMatrix(U, `Final U matrix is:`)
 
     for (let i = 0; i < dimension; i++) {
         D[i][i] = U[i][i];
@@ -152,6 +163,16 @@ function displayUMatrixStep(U, label, description) {
     result.appendChild(uTitle);
     result.appendChild(uTable);
 }
+function displayUMatrix(U, label,) {
+    const result = document.getElementById('result');
+
+    const uTable = document.createElement('table');
+    let uTitle = document.createElement('h3');
+    uTitle.innerText = `${label}`;
+    uTable.appendChild(createMatrixTable(U));
+    result.appendChild(uTitle);
+    result.appendChild(uTable);
+}
 
 function displayResult(L, D, U) {
     const result = document.getElementById('result');
@@ -172,7 +193,7 @@ function displayResult(L, D, U) {
 
     const uTable = document.createElement('table');
     let uTitle = document.createElement('h3');
-    uTitle.innerText = 'Final U Matrix (Normalized):';
+    uTitle.innerText = "Final U Matrix as U' :";
     uTable.appendChild(createMatrixTable(U));
     result.appendChild(uTitle);
     result.appendChild(uTable);
