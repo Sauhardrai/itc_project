@@ -6,8 +6,8 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr auto;
     align-items: center;
     min-height: 100vh;
     background-color: #040d1a;
@@ -83,4 +83,10 @@ body {
 }
 #h1{
     color: rgb(228,228,126);
+}
+
+.footer {
+    color: aqua;
+    text-align: center;
+    padding: 10px;
 }
