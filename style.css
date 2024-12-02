@@ -141,11 +141,9 @@ button:disabled {
     padding: 10px;
 }
 #our{   
-    position: relative;
-    left: 950px;
+    margin:  auto;
 }
 
 #doc{
-    position: relative;
-    left: 450px;
+margin: auto;
 }
